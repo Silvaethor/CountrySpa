@@ -6,25 +6,25 @@ import { ContactPageComponent } from './shared/pages/contact-page/contact-page.c
 import { HomePageComponent } from './shared/pages/home-page/home-page.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomePageComponent
-  },
-  {
-    path: 'about',
-    component: AboutPageComponent
-  },
-  {
-    path: 'contact',
-    component: ContactPageComponent
-  },
+  // {
+  //   path: '',
+  //   component: HomePageComponent
+  // },
+  // {
+  //   path: 'about',
+  //   component: AboutPageComponent
+  // },
+  // {
+  //   path: 'contact',
+  //   component: ContactPageComponent
+  // },
   {
     path: 'countries',
-    component: ContactPageComponent
+    loadChildren:() => import('./countries/countries.module').then(m => m.CountriesModule)
   },
   {
     path: '**',
-    redirectTo: ''
+    redirectTo: 'countries'
   }
 ];
 
